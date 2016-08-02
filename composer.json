@@ -1,0 +1,16 @@
+{
+  "name"       : "bentools/user-aware-command-bundle",
+  "license"    : "MIT",
+  "type"       : "symfony-bundle",
+  "description": "Provides a user value to Doctrine Entities that implements Gedmo Blameable when using Console commands.",
+  "autoload"   : {
+    "psr-4": {
+      "BenTools\\UserAwareCommandBundle\\": "src/BenTools/UserAwareCommandBundle"
+    }
+  },
+  "require"    : {
+    "php"            : ">=5.4",
+    "symfony/symfony": "~2.3|~3.0",
+    "gedmo/doctrine-extensions": "^2.3.3"
+  }
+}
