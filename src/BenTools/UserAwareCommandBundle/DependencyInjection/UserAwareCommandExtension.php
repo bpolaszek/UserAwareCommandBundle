@@ -26,8 +26,17 @@ class UserAwareCommandExtension extends Extension
         $loader->load('services.xml');
 
         $definition = $container->getDefinition('user_aware_command.command_listener');
-        $definition->addMethodCall('setUserValue', [$config['user_name']]);
-        $definition->addMethodCall('setOptionName', [$config['option_name']]);
-        $definition->addMethodCall('setOptionShortcut', [$config['option_shortcut']]);
+
+        if (isset($config['user_name'])) {
+            $definition->addMethodCall('setUserValue', [$config['user_name']]);
+        }
+
+        if (isset($config['option_name'])) {
+            $definition->addMethodCall('setOptionName', [$config['option_name']]);
+        }
+
+        if (isset($config['option_shortcut'])) {
+            $definition->addMethodCall('setOptionShortcut', [$config['option_shortcut']]);
+        }
     }
 }
