@@ -17,8 +17,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('user_aware_command');
+        $treeBuilder = new TreeBuilder('user_aware_command');
+        $rootNode = $treeBuilder->getRootNode();
         $rootNode->children()
             ->scalarNode('user_name')->defaultValue('System')->cannotBeEmpty()->end()
             ->scalarNode('option_name')->defaultValue('user')->cannotBeEmpty()->end()
